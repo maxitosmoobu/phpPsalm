@@ -1,0 +1,25 @@
+{
+  "name": "maxitosmoobu/php-psalm",
+  "type": "library",
+  "license": "MIT",
+  "homepage": "https://github.com/maxitosmoobu/phpPsalm",
+  "description": "Example PHPPsalm",
+  "keywords": ["code coverage", "coverage reports"],
+  "authors": [
+    {
+      "name": "phpPsalm",
+      "email": "maximiliano@smoobu.com"
+    }
+  ],
+  "require": {
+    "php": ">=8.1"
+  },
+  "require-dev": {
+    "vimeo/psalm": "^5.14"
+  },
+  "autoload": {
+    "files": [
+      "src/calculator/BasicCalculator.php"
+    ]
+  }
+}
