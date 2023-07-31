@@ -23,7 +23,6 @@ jobs:
         with:
           security_analysis: true
           report_file: results.sarif
-        run: ./vendor/bin/psalm --output-format=github
       - name: Upload Security Analysis results to GitHub
         uses: github/codeql-action/upload-sarif@v2
         with:
