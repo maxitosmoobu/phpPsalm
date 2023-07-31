@@ -5,6 +5,10 @@ on:
   push:
     branches:
       - main
+permissions:
+  id-token: write
+  contents: read    # This is required for actions/checkout@v1
+  pull-requests: write
 jobs:
   build-test:
     runs-on: ubuntu-latest
@@ -13,7 +17,11 @@ jobs:
         with:
           ref: ${{ github.event.pull_request.head.sha }}  # to check out the actual pull request commit, not the merge commit
           fetch-depth: 0  # a full history is required for pull request analysis
-      - uses: php-actions/composer@v6 # or alternative dependency management
-      - name: Psalm
+
+      - name: Psalm Security Scan
         uses: docker://ghcr.io/psalm/psalm-github-actions
-        run: ./vendor/bin/psalm --output-format=github
+
+      - name: Upload Security Analysis results to GitHub
+        uses: github/codeql-action/upload-sarif@v2
+        with:
+          sarif_file: results.sarif
