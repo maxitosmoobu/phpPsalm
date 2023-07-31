@@ -5,10 +5,7 @@ on:
   push:
     branches:
       - main
-permissions:
-  id-token: write
-  contents: read    # This is required for actions/checkout@v1
-  pull-requests: write
+
 jobs:
   build-test:
     runs-on: ubuntu-latest
