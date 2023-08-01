@@ -40,4 +40,11 @@ class BasicCalculator
     {
         $test = 'maxito';
     }
+
+    public function testPsalmPlugin()
+    {
+        if ("string" == 0) {
+            echo 'Test';
+        }
+    }
 }
