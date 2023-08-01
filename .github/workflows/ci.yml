@@ -16,7 +16,7 @@ jobs:
           fetch-depth: 0  # a full history is required for pull request analysis
 
       - name: Install Plugins
-        run: composer require --dev psalm/plugin-phpunit && vendor/bin/psalm-plugin enable orklah/psalm-insane-comparison
+        run: vendor/bin/psalm-plugin enable orklah/psalm-insane-comparison
 
       - name: Psalm Security Scan
         uses: docker://ghcr.io/psalm/psalm-github-actions
